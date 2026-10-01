@@ -1,0 +1,24 @@
+students = []
+
+n = int(input())
+
+for i in range(n):
+    name = input()
+    grade = float(input())
+    students.append([name, grade])
+
+# Get all grades
+grades = [student[1] for student in students]
+
+# Find second lowest grade
+second_lowest = sorted(set(grades))[1]
+
+# Get names with second lowest grade
+names = [student[0] for student in students if student[1] == second_lowest]
+
+# Sort names alphabetically
+names.sort()
+
+# Print each name on a new line
+for name in names:
+    print(name)
